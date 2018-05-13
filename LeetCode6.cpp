@@ -20,11 +20,11 @@ string convert(string s, int numRows) {
 	int groups = (s_len + group_len - 1) / group_len;
 	for (int i = 0; i < numRows; i++) {
 		for (int j = 0; j < groups; j++) {
-			if (group_len*j + i > s_len)
+			if (group_len*j + i >= s_len)
 				continue;
 			result += s[group_len*j + i];
 			if ((i != 0) && (i != numRows - 1)) {
-				if ((group_len*j + group_len - i) > s_len)
+				if ((group_len*j + group_len - i) >= s_len)
 					continue;
 				result += s[group_len*j + group_len - i];
 			}
